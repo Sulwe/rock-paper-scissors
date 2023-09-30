@@ -1,5 +1,8 @@
 let rounds = 0;
 
+let computerWins = 0;
+let playerWins = 0;
+
 function playGame() {
 
 function getComputerChoice() {
@@ -16,19 +19,26 @@ console.log(playerSelection);
 console.log(computerSelection);
 
 function playRound(){
+
     
     if (computerSelection.toLowerCase() === 'rock' && playerSelection.toLowerCase() === 'paper'){
         console.log('You won! Paper beats Rock!');
+        playerWins++;
     }   else if (computerSelection.toLowerCase() === 'paper' && playerSelection.toLowerCase() === 'rock'){
         console.log('Computer won! Paper beats Rock!');
+        computerWins++;
     }   else if (computerSelection.toLowerCase() === 'rock' && playerSelection.toLowerCase() === 'scissors'){
         console.log('Computer won! Rock beats Scissors!');
+        computerWins++;
     }   else if (computerSelection.toLowerCase() === 'scissors' && playerSelection.toLowerCase() === 'rock'){
         console.log('You won! Rock beats Scissors!');
+        playerWins++;
     }   else if (computerSelection.toLowerCase() === 'paper' && playerSelection.toLowerCase() === 'scissors'){
         console.log('You won! Scissors beats Paper!');
+        playerWins++;
     }   else if (computerSelection.toLowerCase() === 'scissors' && playerSelection.toLowerCase() === 'paper'){
         console.log('Computer won! Scissors beats Paper!');
+        computerWins++;
     }   else {
             console.log('Invalid choice, please input Rock, Paper or Scissors')
     }
@@ -39,6 +49,8 @@ playRound();
 rounds++;
 
 console.log(`Round number ${rounds}`);
+console.log(`Computer Points = ${computerWins}`);
+console.log(`Player Points = ${playerWins}`);
 
 }
 
@@ -47,5 +59,7 @@ console.log(`Round number ${rounds}`);
 while(rounds < 5) {
     playGame();
 }
+
+
 
 
