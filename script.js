@@ -39,8 +39,14 @@ function playRound(){
     }   else if (computerSelection.toLowerCase() === 'scissors' && playerSelection.toLowerCase() === 'paper'){
         console.log('Computer won! Scissors beats Paper!');
         computerWins++;
+    }   else if (computerSelection.toLowerCase() === playerSelection.toLowerCase()){
+        console.log('You both selected the same entry, please try again!');
+        playerWins = playerWins;
+        computerWins = computerWins;
     }   else {
-            console.log('Invalid choice, please input Rock, Paper or Scissors')
+            console.log('Invalid choice, please input Rock, Paper or Scissors');
+            playerWins = playerWins;
+            computerWins = computerWins;
     }
 }
 
@@ -59,7 +65,7 @@ console.log(`Player Points = ${playerWins}`);
 while(rounds < 5) {
     playGame();
 }
-
+playerWins > computerWins ? console.log('You have won the game!') : console.log('The computer has won the game!');
 
 
 
