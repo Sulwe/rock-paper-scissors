@@ -65,7 +65,13 @@ console.log(`Player Points = ${playerWins}`);
 while(rounds < 5) {
     playGame();
 }
-playerWins > computerWins ? console.log('You have won the game!') : console.log('The computer has won the game!');
+if (playerWins > computerWins) {
+    console.log('You have won the game!');
+}  else if (computerWins > playerWins) {
+    console.log('The computer has won the game!');
+}  else {
+    console.log('The game is a draw!');
+}
 
 
 
