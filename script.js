@@ -1,3 +1,6 @@
+const btn = document.querySelectorAll('.btn');
+btn.forEach(element => element.addEventListener('click', playGame));
+
 let rounds = 0;
 
 let computerWins = 0;
