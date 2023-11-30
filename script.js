@@ -17,7 +17,7 @@ function getComputerChoice() {
 }
 let computerSelection = getComputerChoice();
 
-let playerSelection = prompt('Please input your choice');
+let playerSelection = this.value;
 console.log(playerSelection);
 console.log(computerSelection);
 
