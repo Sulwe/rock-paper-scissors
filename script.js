@@ -70,6 +70,16 @@ console.log(`Round number ${rounds}`);
 console.log(`Computer Points = ${computerWins}`);
 console.log(`Player Points = ${playerWins}`);
 
+function hidegoup() {
+    var p_list = document.getElementsByTagName("p");
+    for(var i=p_list.length-1; i>=0; i--){
+        var p = p_list[i];
+        if(p.className === "goup"){
+            p.parentNode.removeChild(p);
+        }
+    }
+}
+
 
 const div = document.querySelector("body");
 
@@ -84,6 +94,10 @@ div.appendChild(compPoints);
 const playerPoints = document.createElement("p");
 playerPoints.textContent = `Player Points = ${playerWins}`;
 div.appendChild(playerPoints);
+
+const prounds = document.createElement("p");
+prounds.textContent = `Round number ${rounds}`;
+div.appendChild(prounds);
 
 }
 
