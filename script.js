@@ -1,13 +1,19 @@
-const btn = document.querySelectorAll('.btn');
-btn.forEach(element => element.addEventListener('click', playGame));
-
 let rounds = 0;
 
 let computerWins = 0;
 let playerWins = 0;
 let winner = " ";
 
+const btn = document.querySelectorAll('.btn');
+
+btn.forEach(element => element.addEventListener('click', playGame));
+
+
+
+
 function playGame() {
+
+
 
 function getComputerChoice() {
     const arr = ['Rock', 'Paper', 'Scissors'];
@@ -61,24 +67,14 @@ function playRound(){
             computerWins = computerWins;
     }
 }
-
 playRound();
 
 rounds++;
 
+
 console.log(`Round number ${rounds}`);
 console.log(`Computer Points = ${computerWins}`);
 console.log(`Player Points = ${playerWins}`);
-
-function hidegoup() {
-    var p_list = document.getElementsByTagName("p");
-    for(var i=p_list.length-1; i>=0; i--){
-        var p = p_list[i];
-        if(p.className === "goup"){
-            p.parentNode.removeChild(p);
-        }
-    }
-}
 
 
 const div = document.querySelector("body");
@@ -99,9 +95,6 @@ const prounds = document.createElement("p");
 prounds.textContent = `Round number ${rounds}`;
 div.appendChild(prounds);
 
-}
-
-
 
 while(rounds < 5) {
     playGame();
@@ -112,7 +105,15 @@ if (playerWins > computerWins) {
     console.log('The computer has won the game!');
 }  else {
     console.log('The game is a draw!');
+
 }
+}
+
+
+
+
+
+
 
 
 
