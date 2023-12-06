@@ -1,17 +1,22 @@
-let rounds = 0;
-
 let computerWins = 0;
 let playerWins = 0;
 let winner = " ";
+let rounds = 0;
+
+
 
 const btn = document.querySelectorAll('.btn');
+
+
 
 btn.forEach(element => element.addEventListener('click', playGame));
 
 
 
 
+
 function playGame() {
+
 
 
 
@@ -57,7 +62,7 @@ function playRound(){
         computerWins++;
     }   else if (computerSelection.toLowerCase() === playerSelection.toLowerCase()){
         console.log('You both selected the same entry, please try again!');
-        winner = " ";
+        winner = "You both selected the same entry, please try again!";
         playerWins = playerWins;
         computerWins = computerWins;
     }   else {
@@ -67,9 +72,13 @@ function playRound(){
             computerWins = computerWins;
     }
 }
+
 playRound();
 
 rounds++;
+
+
+
 
 
 console.log(`Round number ${rounds}`);
@@ -77,37 +86,50 @@ console.log(`Computer Points = ${computerWins}`);
 console.log(`Player Points = ${playerWins}`);
 
 
+//const div = document.querySelector("body");
+
+//const declaration = document.createElement("p");
+//declaration.textContent = winner;
+//div.appendChild(declaration);
 const div = document.querySelector("body");
+const declaration = document.getElementById("winner");
+declaration.innerText = winner;
 
-const declaration = document.createElement("p");
-declaration.textContent = winner;
-div.appendChild(declaration);
+const cPoints = document.getElementById("comp");
+cPoints.innerText = computerWins;
 
-const compPoints = document.createElement("p");
-compPoints.textContent = `Computer Points = ${computerWins}`;
-div.appendChild(compPoints);
+const pPoints = document.getElementById("play");
+pPoints.innerText = playerWins;
 
-const playerPoints = document.createElement("p");
-playerPoints.textContent = `Player Points = ${playerWins}`;
-div.appendChild(playerPoints);
+const pRounds = document.getElementById("rounds");
+pRounds.innerText = rounds;
 
-const prounds = document.createElement("p");
-prounds.textContent = `Round number ${rounds}`;
-div.appendChild(prounds);
+//const compPoints = document.createElement("p");
+//compPoints.textContent = `Computer Points = ${computerWins}`;
+//div.appendChild(compPoints);
 
+//const playerPoints = document.createElement("p");
+//playerPoints.textContent = `Player Points = ${playerWins}`;
+//div.appendChild(playerPoints);
 
-while(rounds < 5) {
-    playGame();
-}
-if (playerWins > computerWins) {
-    console.log('You have won the game!');
-}  else if (computerWins > playerWins) {
-    console.log('The computer has won the game!');
-}  else {
-    console.log('The game is a draw!');
+//const prounds = document.createElement("p");
+//prounds.textContent = `Round number ${rounds}`;
+//div.appendChild(prounds);
 
 }
-}
+
+
+// while(rounds < 5) {
+//     playGame();
+// }
+// if (playerWins > computerWins) {
+//     console.log('You have won the game!');
+// }  else if (computerWins > playerWins) {
+//     console.log('The computer has won the game!');
+// }  else {
+//     console.log('The game is a draw!');
+
+// }
 
 
 
